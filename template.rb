@@ -1,14 +1,14 @@
 # run with:
-# rails new my_app -m ./lti_starter_app/template.rb
-# rails new my_app -m https://raw.githubusercontent.com/atomicjolt/lti_starter_app/master/template.rb
+# rails new my_app -m ./content_item_example/template.rb
+# rails new my_app -m https://raw.githubusercontent.com/atomicjolt/content_item_example/master/template.rb
 
 require "fileutils"
 require "securerandom"
 
 
-#repo = "git@github.com:atomicjolt/lti_starter_app.git"
-repo = "https://github.com/atomicjolt/lti_starter_app.git"
-#repo = "git@bitbucket.com:atomicjolt/lti_starter_app.git"
+#repo = "git@github.com:atomicjolt/content_item_example.git"
+repo = "https://github.com/atomicjolt/content_item_example.git"
+#repo = "git@bitbucket.com:atomicjolt/content_item_example.git"
 
 # keep track if the initial directory
 @working_dir = destination_root
@@ -127,23 +127,23 @@ modify_files << ".ruby-gemset"
 
 modify_files.each do |f|
 
-  gsub_file(f, "lti_starter_app") do |match|
+  gsub_file(f, "content_item_example") do |match|
     app_name.underscore
   end
 
-  gsub_file(f, "ltistarterapp") do |match|
+  gsub_file(f, "ContentItemExample") do |match|
     app_name.titleize.gsub(' ', '')
   end
 
-  gsub_file(f, "LtiStarterApp") do |match|
+  gsub_file(f, "ContentItemExample") do |match|
     app_name.titleize.gsub(' ', '')
   end
 
-  gsub_file(f, "ltistarterapp") do |match|
+  gsub_file(f, "ContentItemExample") do |match|
     url_safe_name
   end
 
-  gsub_file(f, "LTI Starter App") do |match|
+  gsub_file(f, "Content Item Example") do |match|
     app_name.titleize
   end
 
