@@ -1,0 +1,21 @@
+<h1>Select Content Item:</h1>
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to item[:name], content_item_path(item[:id],
+        return_url: params[:content_item_return_url],
+        return_type: @return_type,
+        oauth_consumer_key: params[:oauth_consumer_key]) %>
+    </li>
+  <% end %>
+</ul>
+
+
+<% content_for :head do -%>
+  <%= webpack_styles_tag 'styles' %>
+<% end -%>
+
+<%= render 'shared/default_client_settings' %>
+<%= webpack_manifest_script %>
+<div id="main-app"></div>
+<%= webpack_bundle_tag current_lti_application_instance.lti_application.client_application_name + "_content_item_selector" %>

@@ -1,0 +1,12 @@
+<div>
+  <p>Loading Content Item please wait...</p>
+  <form action="<%= @consumer.launch_url %>" name="ltiLaunchForm" id="ltiLaunchForm" style="display:none;" method="post" encType="application/x-www-form-urlencoded">
+    <% @consumer.generate_launch_data.each_pair do |key, val| %>
+      <input type="hidden" name="<%= key %>" value="<%= val %>"/>
+    <% end %>
+    <button type="submit">Launch the tool</button>
+  </form>
+</div>
+<script language="javascript">
+  document.ltiLaunchForm.submit();
+</script>

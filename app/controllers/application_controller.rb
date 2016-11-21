@@ -36,4 +36,14 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def content_items
+      [{
+        id: 1,
+        name: "I am one"
+      },{
+        id: 2,
+        name: "I am two"
+      }]
+    end
+
 end

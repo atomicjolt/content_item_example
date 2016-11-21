@@ -48,7 +48,8 @@ module.exports = {
   staticDir: clientAppPath + 'static',
 
   entries: {
-    app: clientAppPath + 'js/app.jsx'
+    app: clientAppPath + 'js/app.jsx',
+    app_content_item_selector: clientAppPath + 'js/app_content_item_selector.jsx'
   },
 
   cssEntries: {

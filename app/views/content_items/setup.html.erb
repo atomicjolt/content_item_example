@@ -1,0 +1,10 @@
+<h1>Content Item Example</h1>
+
+<h2>LTI configuration XML</h2>
+<% @lti_application_instances.each do |inst| %>
+  <p>Name: <%= inst.lti_application.name %></p>
+  <p>LTI Key: <%= inst.lti_key %></p>
+  <p>LTI Secret: <%= inst.lti_secret %></p>
+  <hr />
+<% end -%>
+<textarea style="height:500px;width:100%;"><%=@xml%></textarea>

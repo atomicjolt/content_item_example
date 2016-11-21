@@ -36,6 +36,16 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :items
+
+  resources :content_items do
+    collection do
+      post :index
+      get :index
+      get :setup
+    end
+  end
+
   namespace :admin do
     root :to => "lti_installs#index"
     resources :canvas_authentications
